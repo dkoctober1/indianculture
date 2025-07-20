@@ -29,6 +29,7 @@ public class BookingController {
     // Handle form submission and save booking
     @PostMapping("/submit")
     public String submitBooking(@ModelAttribute Booking booking, Model model, HttpSession session) {
+        System.out.println(booking.getLocation());
         Integer userId = (Integer) session.getAttribute("userId");
         booking.setUserId(userId);
         // Save the booking to the database
